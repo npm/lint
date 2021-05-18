@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "bin": {
     "npmcli-lint": "index.js",
-    "npmcli-lint-setup": "setup.js"
+    "npmcli-lint-setup": "setup.js",
+    "npmcli-lint-init": "init.js"
   },
   "files": [
     "index.js",
-    "setup.js"
+    "setup.js",
+    "init.js"
   ],
   "description": "lint the npmcli way",
   "repository": {

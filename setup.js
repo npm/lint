@@ -4,13 +4,23 @@ const { resolve } = require('path')
 const { writeFileSync } = require('fs')
 const pjFile = resolve(process.cwd(), 'package.json')
 const pkg = require(pjFile)
+const force = process.argv.includes('--force') ||
+  process.argv.includes('-f') ||
+  process.env.npm_config_force === 'true'
 
 pkg.scripts = pkg.scripts || {}
 const { scripts } = pkg
-scripts.npmclilint = 'npmcli-lint'
-scripts.lint = scripts.lint || 'npm run npmclilint -- *.js lib/**/*.js test/**/*.js'
-scripts.lintfix = scripts.lintfix || 'npm run lint -- --fix'
-scripts.posttest = scripts.posttest || 'npm run lint --'
-scripts.postsnap = scripts.postsnap || 'npm run lintfix --'
+const additions = {
+  npmclilint: 'npmcli-lint',
+  lint: 'npm run npmclilint -- *.js lib/**/*.js test/**/*.js',
+  lintfix: 'npm run lint -- --fix',
+  posttest: 'npm run lint --',
+  postsnap: 'npm run lintfix --',
+}
+
+if (force)
+  Object.assign(scripts, additions)
+else
+  pkg.scripts = Object.assign(additions, scripts)
 
 writeFileSync(pjFile, JSON.stringify(pkg, null, 2) + '\n')
