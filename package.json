@@ -1,15 +1,14 @@
 {
   "name": "@npmcli/lint",
   "version": "0.0.0",
+  "main": "lib/index.js",
   "bin": {
-    "npmcli-lint": "index.js",
-    "npmcli-lint-setup": "setup.js",
-    "npmcli-lint-init": "init.js"
+    "npmcli-lint": "lib/index.js",
+    "npmcli-lint-setup": "lib/setup.js",
+    "npmcli-lint-init": "lib/init.js"
   },
   "files": [
-    "index.js",
-    "setup.js",
-    "init.js"
+    "lib"
   ],
   "description": "lint the npmcli way",
   "repository": {
@@ -24,8 +23,8 @@
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
-    "eslint": "npmcli-lint",
-    "lint": "npm run eslint -- *.js lib/**/*.js test/**/*.js",
+    "npmcli-lint": "node .",
+    "lint": "npm run npmcli-lint -- *.js lib/**/*.js test/**/*.js",
     "lintfix": "npm run lint -- --fix",
     "posttest": "npm run lint",
     "postsnap": "npm run lintfix"
