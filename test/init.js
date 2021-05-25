@@ -5,8 +5,11 @@ const cwd = require('path').resolve(__dirname, '..')
 t.formatSnapshot = obj => {
   if (Array.isArray(obj))
     return obj.map(o => t.formatSnapshot(o))
-  if (typeof obj === 'string')
-    return obj.split(cwd).join('{CWD}').replace(/\\/g, '/')
+  if (typeof obj === 'string') {
+    return obj.split(cwd).join('{CWD}')
+      .replace(/\\/g, '/')
+      .replace(/\.cmd$/i, '')
+  }
   if (obj && typeof obj === 'object') {
     return Object.entries(obj)
       .map(([k, v]) => [k, t.formatSnapshot(v)])
