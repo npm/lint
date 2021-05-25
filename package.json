@@ -23,11 +23,11 @@
     "preversion": "npm test",
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
-    "npmcli-lint": "node .",
-    "lint": "npm run npmcli-lint -- *.js lib/**/*.js test/**/*.js",
+    "npmclilint": "node .",
+    "lint": "npm run npmclilint -- \"*.*js\" \"lib/**/*.*js\" \"test/**/*.*js\"",
     "lintfix": "npm run lint -- --fix",
-    "posttest": "npm run lint",
-    "postsnap": "npm run lintfix"
+    "posttest": "npm run lint --",
+    "postsnap": "npm run lintfix --"
   },
   "tap": {
     "check-coverage": true

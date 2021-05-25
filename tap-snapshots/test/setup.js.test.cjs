@@ -8,7 +8,7 @@
 exports[`test/setup.js TAP fresh setup > must match snapshot 1`] = `
 Object {
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -20,7 +20,7 @@ Object {
 exports[`test/setup.js TAP setup files in lib and test > must match snapshot 1`] = `
 Object {
   "scripts": Object {
-    "lint": "npm run npmclilint -- lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -32,7 +32,7 @@ Object {
 exports[`test/setup.js TAP setup files in lib only > must match snapshot 1`] = `
 Object {
   "scripts": Object {
-    "lint": "npm run npmclilint -- lib/**/*.*js",
+    "lint": "npm run npmclilint -- \\"lib/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -44,7 +44,7 @@ Object {
 exports[`test/setup.js TAP setup files in lib only > must match snapshot 2`] = `
 Object {
   "scripts": Object {
-    "lint": "npm run npmclilint -- lib/**/*.*js",
+    "lint": "npm run npmclilint -- \\"lib/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -56,7 +56,7 @@ Object {
 exports[`test/setup.js TAP setup files in root and test > must match snapshot 1`] = `
 Object {
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -68,7 +68,7 @@ Object {
 exports[`test/setup.js TAP setup files in root, lib, and test > must match snapshot 1`] = `
 Object {
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -80,7 +80,7 @@ Object {
 exports[`test/setup.js TAP setup files in test only > must match snapshot 1`] = `
 Object {
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -94,7 +94,7 @@ Object {
   "name": "foo",
   "scripts": Object {
     "foo": "foo",
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -122,7 +122,7 @@ exports[`test/setup.js TAP setup with some scripts colliding, force --force > mu
 Object {
   "name": "foo",
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -136,7 +136,7 @@ exports[`test/setup.js TAP setup with some scripts colliding, force -f > must ma
 Object {
   "name": "foo",
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -150,7 +150,7 @@ exports[`test/setup.js TAP setup with some scripts colliding, force from npm > m
 Object {
   "name": "foo",
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
@@ -164,7 +164,7 @@ exports[`test/setup.js TAP setup without scripts > must match snapshot 1`] = `
 Object {
   "name": "foo",
   "scripts": Object {
-    "lint": "npm run npmclilint -- *.*js lib/**/*.*js test/**/*.*js",
+    "lint": "npm run npmclilint -- \\"*.*js\\" \\"lib/**/*.*js\\" \\"test/**/*.*js\\"",
     "lintfix": "npm run lint -- --fix",
     "npmclilint": "npmcli-lint",
     "postsnap": "npm run lintfix --",
