@@ -3,8 +3,9 @@ const { existsSync } = require('fs')
 
 const cwd = require('path').resolve(__dirname, '..')
 t.formatSnapshot = obj => {
-  if (Array.isArray(obj))
+  if (Array.isArray(obj)) {
     return obj.map(o => t.formatSnapshot(o))
+  }
   if (typeof obj === 'string') {
     return obj.split(cwd).join('{CWD}')
       .replace(/\\/g, '/')

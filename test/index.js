@@ -2,8 +2,9 @@ const t = require('tap')
 
 const cwd = require('path').resolve(__dirname, '..')
 t.formatSnapshot = obj => {
-  if (Array.isArray(obj))
+  if (Array.isArray(obj)) {
     return obj.map(o => t.formatSnapshot(o))
+  }
   if (typeof obj === 'string') {
     return obj.split(cwd).join('{CWD}')
       .replace(/\\/g, '/')
@@ -27,10 +28,11 @@ const runIndex = (t, ...args) => {
   process.argv = [process.argv[0], process.argv[1], ...args]
   const {exitCode} = process
   t.teardown(() => {
-    if (t.passing())
+    if (t.passing()) {
       process.exitCode = exitCode
-    else
+    } else {
       process.exitCode = 1
+    }
   })
   t.mock('../lib/index.js', {
     child_process: {
