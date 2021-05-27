@@ -33,7 +33,12 @@
     "check-coverage": true
   },
   "devDependencies": {
-    "tap": "^15.0.9"
+    "tap": "^15.0.9",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0"
   },
   "peerDependencies": {
     "eslint": "^7.26.0",
