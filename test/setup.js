@@ -4,12 +4,13 @@ process.env.npm_config_force = 'false'
 const setup = require.resolve('../lib/setup.js')
 const argv = process.argv
 const runSetup = (t, ...args) => {
-  const cwd = process.cwd()
-  t.teardown(() => process.chdir(cwd))
-  process.chdir(t.testdirName)
+  const { cwd } = process
+  const { testdirName } = t
+  process.cwd = () => testdirName
   process.argv = [process.argv[0], process.argv[1], ...args]
   t.mock(setup)
   process.argv = argv
+  process.cwd = cwd
 }
 
 t.test('fresh setup', t => {

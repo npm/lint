@@ -29,8 +29,9 @@ const fsMock = { ...require('fs') }
 const init = require.resolve('../lib/init.js')
 const which = require.resolve('which')
 const runInit = t => {
-  const cwd = process.cwd()
-  process.chdir(t.testdirName)
+  const { cwd } = process
+  const { testdirName } = t
+  process.cwd = () => testdirName
   t.mock(init, {
     [which]: {
       sync: cmd => cmd === process.execPath ? 'execPath' : `/which/${cmd}`,
@@ -43,7 +44,7 @@ const runInit = t => {
       },
     },
   })
-  process.chdir(cwd)
+  process.cwd = cwd
 }
 
 t.test('basic init', t => {
