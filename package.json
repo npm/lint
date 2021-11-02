@@ -3,11 +3,10 @@
   "version": "1.0.2",
   "main": "lib/index.js",
   "bin": {
-    "npmcli-lint": "lib/index.js",
-    "npmcli-lint-setup": "lib/setup.js",
-    "npmcli-lint-init": "lib/init.js"
+    "lint": "lib/index.js"
   },
   "files": [
+    "bin",
     "lib"
   ],
   "description": "lint the npmcli way",
@@ -15,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/npm/lint"
   },
-  "author": "Isaac Z. Schlueter <i@izs.me> (https://izs.me)",
+  "author": "GitHub Inc.",
   "license": "ISC",
   "scripts": {
     "test": "tap",
@@ -24,30 +23,25 @@
     "postversion": "npm publish",
     "prepublishOnly": "git push origin --follow-tags",
     "npmclilint": "node .",
-    "lint": "npm run npmclilint -- \"*.*js\" \"lib/**/*.*js\" \"test/**/*.*js\"",
+    "lint": "eslint '**/*.js'",
     "lintfix": "npm run lint -- --fix",
-    "posttest": "npm run lint --",
-    "postsnap": "npm run lintfix --"
+    "posttest": "npm run lint",
+    "postsnap": "npm run lintfix --",
+    "postlint": "npm-template-check"
   },
   "tap": {
     "check-coverage": true
   },
   "devDependencies": {
-    "tap": "^15.0.9",
-    "eslint": "^7.26.0",
-    "eslint-plugin-import": "^2.23.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-standard": "^5.0.0"
-  },
-  "peerDependencies": {
-    "eslint": "^7.26.0",
-    "eslint-plugin-import": "^2.23.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-standard": "^5.0.0"
+    "@npmcli/template-oss": "^2.1.0",
+    "tap": "^15.0.9"
   },
   "dependencies": {
+    "@npmcli/eslint-config": "^1.0.2",
     "which": "^2.0.2"
+  },
+  "templateVersion": "2.1.0",
+  "engines": {
+    "node": "^12.13.0 || ^14.15.0 || >=16"
   }
 }

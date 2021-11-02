@@ -26,7 +26,7 @@ let SPAWN_EXITCODE = 0
 
 const runIndex = (t, ...args) => {
   process.argv = [process.argv[0], process.argv[1], ...args]
-  const {exitCode} = process
+  const { exitCode } = process
   t.teardown(() => {
     if (t.passing()) {
       process.exitCode = exitCode

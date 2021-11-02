@@ -10,7 +10,7 @@ Array [
   "{CWD}/node_modules/.bin/eslint",
   Array [
     "-c",
-    "{CWD}/lib/.eslintrc.json",
+    "{CWD}/node_modules/@npmcli/eslint-config/lib/index.js",
     "--fix",
   ],
   Object {
@@ -24,7 +24,7 @@ Array [
   "{CWD}/node_modules/.bin/eslint",
   Array [
     "-c",
-    "{CWD}/lib/.eslintrc.json",
+    "{CWD}/node_modules/@npmcli/eslint-config/lib/index.js",
   ],
   Object {
     "stdio": "inherit",
@@ -37,7 +37,7 @@ Array [
   "{CWD}/node_modules/.bin/eslint",
   Array [
     "-c",
-    "{CWD}/lib/.eslintrc.json",
+    "{CWD}/node_modules/@npmcli/eslint-config/lib/index.js",
   ],
   Object {
     "stdio": "inherit",
